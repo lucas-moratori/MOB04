@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo</title>
+</head>
+<body>
+    <div class="card">
+    <h1>Exemplo - 1 - HTML</h1>
+    <h2>extremamente simples</h2>
+    <input type="number" id="teste" placeholder="usa a setinha aí"><br>
+    <button id="exibir" onclick="exibir()">EXIBIR</button>
+    <button id="butao" onclick="butao()">APAGAR</button>
+    <h3 id="resposta"></h3>
+    </div>
+    <div class="card">
+    <h1>Exemplo - 2 - HTML</h1>
+    <h2>ainda mais simples</h2>
+    <input type="text" id="teste2" placeholder="digite seu nome"><br>
+    <button id="exibir2" onclick="exibir2()">EXIBIR</button>
+    <button id="apagar" onclick="apagar()">APAGAR</button>
+    <h3 id="resposta2"></h3>
+    </div>
+</body>
+<style>
+    body { font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: center; padding: 30px; background: #000000; color:white; border:10px }
+    .card { background: rgb(14, 14, 14); padding: 20px; border-radius: 10px; max-width: 300px; margin: auto; border: 1px solid; margin-bottom: 20px;}
+    #exibir { background: #1a1a1a; color: white; border: none; padding: 10px; border-radius: 5px; font-weight: bold; cursor: pointer; margin: 10px; }
+    #butao { background: #1a1a1a; color: white; border: none; padding: 10px; border-radius: 5px; font-weight: bold; cursor: pointer; margin: 10px }
+    #teste { background: #1a1a1a; color: white; border: none; padding: 10px; border-radius: 5px; font-weight: bold; cursor: pointer; }
+    #apagar { background: #1a1a1a; color: white; border: none; padding: 10px; border-radius: 5px; font-weight: bold; cursor: pointer; }
+    #exibir2 { background: #1a1a1a; color: white; border: none; padding: 10px; border-radius: 5px; font-weight: bold; cursor: pointer; }
+    #teste2 { background: #1a1a1a; color: white; border: none; padding: 10px; border-radius: 5px; font-weight: bold; cursor: pointer; margin:10px; }
+</style>
+<script>
+    function butao() {
+        const clear = document.getElementById("teste").value = "";
+        document.getElementById("resposta").innerText = "";
+        alert("APAGADO");
+    }
+    function exibir() {
+        const exibir = document.getElementById("teste").value;
+        document.getElementById("resposta").innerText = (teste).value;
+    }
+    function exibir2() {
+        const exibir = document.getElementById("teste2").value;
+        document.getElementById("resposta2").innerText = "Nome inserido: " + (teste2).value;
+    }
+    function apagar() {
+        const apagar2 = document.getElementById("teste2").value = "";
+        document.getElementById("resposta2").innerText = "";
+        alert("APAGADO");
+    }
+</script>
+</html>

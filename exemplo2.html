@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo - 2</title>
+</head>
+<style>
+    body { font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: center; padding: 30px; background: #000000; color:white; border:10px }
+    .card { background: rgb(14, 14, 14); padding: 20px; border-radius: 10px; max-width: 300px; margin: auto; border: 1px solid; margin-bottom: 20px;}
+    #pagamento { background: rgb(14, 14, 14); padding: 10px; color:white; border-radius: 10px; max-width: 200px; margin: auto; border: 1px solid; margin-top: 10px;}
+    #resultado { margin-top:10px }
+    .pix { background: rgb(106, 255, 106); padding: 10px; border-radius: 10px; max-width: 300px; margin: auto; }
+    .cartao { background: rgb(0, 183, 255); padding: 10px; border-radius: 10px; max-width: 300px; margin: auto; }
+    .dinheiro { background: rgb(255, 212, 70); padding: 10px; border-radius: 10px; max-width: 300px; margin: auto; }
+    .boleto { background: rgb(255, 97, 92); padding: 10px; border-radius: 10px; max-width: 300px; margin: auto; }
+    .escambo { background: rgb(255, 30, 154); padding: 10px; border-radius: 10px; max-width: 300px; margin: auto; }
+</style>
+<body>
+    <div class="card">
+        <h1>Exemplo - 3 - HTML</h1>
+        <h2>um pouco mais avançado</h2>
+        <p>Total: R$ 100,00</p>
+        <label id="label">escolha uma opção abaixo:</label><br>
+    <select id="pagamento" onchange="verificarPagamento()">
+        <option value="pix">PIX</option>
+        <option value="cartao">Cartão</option>
+        <option value="dinheiro">Dinheiro</option>
+        <option value="boleto">Boleto</option>
+        <option value="escambo">Escambo</option>
+    </select>
+    <div id="resultado" class="resultado">
+    </div>
+
+</body>
+<script>
+    function verificarPagamento() {
+            let pagamento = document.getElementById("pagamento").value;
+            let resultado = document.getElementById("resultado");
+
+            if (pagamento === "pix") {
+                resultado.innerText = "PIX: R$ 95,00 (5% de Desconto)";
+                resultado.className = "resultado pix";
+            } else if (pagamento === "cartao") {
+                resultado.innerText = "Cartão: R$ 100,00";
+                resultado.className = "resultado cartao";
+            } else if (pagamento === "dinheiro") {
+                resultado.innerText = "Dinheiro: R$ 100,00 (Levar Troco)";
+                resultado.className = "resultado dinheiro";
+            } else if (pagamento === "boleto") {
+                resultado.innerText = "Boleto: R$ 100,00";
+                resultado.className = "resultado boleto";
+            } else {
+                resultado.innerText = "Escambo: ???????";
+                resultado.className = "resultado escambo";
+        }
+    }
+</script>
+</html>
